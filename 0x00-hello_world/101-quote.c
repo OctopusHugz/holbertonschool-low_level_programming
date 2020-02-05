@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#define STRING "and that piece of art is useful\" - Dora Korpar, 2015-10-19"
+#define STRING "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
 
 ssize_t write(int fd, const void *buf, size_t count);
 
