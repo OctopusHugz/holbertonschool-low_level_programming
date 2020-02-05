@@ -1,0 +1,1 @@
+This project focuses on learning the basics of the C language to build a strong foundation that we are going to leap forward from later.
