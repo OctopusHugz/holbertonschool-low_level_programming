@@ -1,0 +1,1 @@
+This project is the first exposure to learning the powerful C language.
