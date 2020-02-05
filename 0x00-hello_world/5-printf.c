@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - prints the string given to printf
  * Return: 0 if no errors
  */
 
