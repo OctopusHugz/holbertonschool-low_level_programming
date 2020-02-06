@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - prints all possible combinations of single digit numbers
+ * main - prints all numbers from 00 to 99
  * Return: 0 if no errors
  */
 
