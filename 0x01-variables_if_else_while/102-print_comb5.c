@@ -21,20 +21,13 @@ int main(void)
 			{
 				for (z = '1'; z <= '9'; z++)
 				{
-					if (y != z && y < z)
-					{
-						putchar(w);
-						putchar(x);
-						putchar(' ');
-						putchar(y);
-						putchar(z);
-						putchar(',');
-								/*if (w != '9' || x != '8' || y != '9' || z != '9')
-								{
-									putchar(',');
-									putchar(' ');
-									}*/
-					 }
+					putchar(w);
+					putchar(x);
+					putchar(' ');
+					putchar(y);
+					putchar(z);
+					putchar(',');
+					putchar(' ');
 				}
 				y++;
 			}
