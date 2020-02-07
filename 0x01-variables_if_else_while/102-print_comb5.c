@@ -13,28 +13,44 @@ int main(void)
 	int y;
 	int z;
 
-	for (w = '0'; w <= '9';)
+	for (w = '0'; w <= '9'; w++)
 	{
 		for (x = '0'; x <= '9';)
 		{
-			for (y = '0'; y <= '9';)
+			for (y = '0'; y <= '9'; y++)
 			{
-				for (z = '1'; z <= '9'; z++)
+				if (y != '9' && z != '9')
 				{
-					putchar(w);
-					putchar(x);
-					putchar(' ');
-					putchar(y);
-					putchar(z);
-					putchar(',');
-					putchar(' ');
+					for (z = '0'; z <= '9';)
+					{
+						putchar(w);
+						putchar(x);
+						putchar(' ');
+						putchar(y);
+						if (w == '0' && x == '0' && y == '0' && z == '0')
+						{
+							z++;
+							putchar(z);
+							z++;
+						}
+						else
+						{
+							putchar(z);
+							z++;
+						}
+						putchar(',');
+						putchar(' ');
+					}
+					/*y++;*/
 				}
-				y++;
+				/*x++;*/
 			}
-			x++;
+			else
+			{
+				x++;
+				/*w++;*/
+			}
+			putchar('\n');
+			return (0);
 		}
-		w++;
 	}
-	putchar('\n');
-	return (0);
-}
