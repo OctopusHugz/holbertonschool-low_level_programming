@@ -1,0 +1,1 @@
+This project focuses on learning the fundamentals of C functions and nested loops.
