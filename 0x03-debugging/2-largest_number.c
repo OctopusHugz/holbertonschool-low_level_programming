@@ -24,6 +24,6 @@ int largest_number(int a, int b, int c)
 	{
 		large = c;
 	}
-	
+
 	return (large);
 }
