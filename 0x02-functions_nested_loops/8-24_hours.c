@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * 24_hours - prints every minute and every hour of an entire day
+ * jack_bauer - prints every minute and every hour of an entire day
  *
  * Return: 0 if success
  */
