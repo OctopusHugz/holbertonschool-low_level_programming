@@ -13,44 +13,30 @@ void times_table(void)
 	int col;
 	int prod;
 
-	for (row = 0; row <= 9; row++)
+	for (row = 0; row < 10; row++)
 	{
-		for (col = 0; col <= 9; col++)
+		for (col = 0; col < 10; col++)
 		{
-			if (col < 9)
+			prod = row * col;
+			if (col != 0)
 			{
-				prod = row * col;
-				if (prod >= 0 && prod < 10)
+				_putchar(',');
+				_putchar(' ');
+				if (prod < 10)
 				{
-					_putchar(prod + '0');
-					_putchar(',');
-					_putchar(' ');
 					_putchar(' ');
 				}
 				else
 				{
 					_putchar(prod / 10 + '0');
-					_putchar(prod % 10 + '0');
-					_putchar(',');
-					_putchar(' ');
 				}
+				_putchar(prod % 10 + '0');
 			}
 			else
 			{
-				prod = row * col;
-				if (prod >= 0 && prod < 10)
-				{
-					_putchar(prod + '0');
-					_putchar('\n');
-				}
-				else
-				{
-					_putchar(prod / 10 + '0');
-					_putchar(prod % 10 + '0');
-					_putchar('\n');
-				}
+				_putchar('0');
 			}
 		}
-		//putchar('\n');
+		_putchar('\n');
 	}
 }
