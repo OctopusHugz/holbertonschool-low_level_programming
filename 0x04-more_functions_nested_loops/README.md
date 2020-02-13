@@ -1,0 +1,1 @@
+This project focuses on extra practice learning functions and nested loops.
