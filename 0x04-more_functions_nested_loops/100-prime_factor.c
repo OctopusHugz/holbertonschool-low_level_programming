@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 /**
  * main - returns largest prime factorial of a number
@@ -15,7 +14,7 @@ int main(void)
 	div = 3;
 	store = 612852475143;
 
-	while (div <= sqrt(store) && div >= 3)
+	while (div <= store && div >= 3)
 	{
 		if (store % div == 0)
 		{
