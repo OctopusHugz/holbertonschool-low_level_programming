@@ -1,0 +1,1 @@
+This project focuses on learning the basics of pointers, arrays, and strings.
