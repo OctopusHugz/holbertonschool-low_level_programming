@@ -16,7 +16,7 @@ void puts2(char *str)
 	}
 	if (len == 0)
 	{
-		return;
+		;
 	}
 	else
 	{
