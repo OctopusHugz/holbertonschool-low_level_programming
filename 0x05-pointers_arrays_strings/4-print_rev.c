@@ -17,6 +17,7 @@ void print_rev(char *s)
 	}
 
 	/* print in reverse from strlen to 0 */
+	i--;
 
 	for (; i >= 0; i--)
 	{
