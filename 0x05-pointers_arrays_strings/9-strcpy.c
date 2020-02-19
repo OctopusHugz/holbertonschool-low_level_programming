@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -11,16 +10,18 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	int i, len;
+	int i = 0;
+	int len = 0;
 
-	for (i = 0; src[i] != '\0'; i++)
+	while (src[len])
 	{
 		len++;
 	}
-	for (i = 0; i < len + 1; i++)
+
+	for (i = 0; i < len; i++)
 	{
 		dest[i] = src[i];
-		printf("%c", src[i]);
 	}
+	dest[i] = '\0';
 	return (dest);
 }
