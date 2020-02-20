@@ -26,8 +26,7 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		len++;
 	}
-
-        /* loop through i and append to dest up until n bytes */
+/* loop through i and append to dest up until n bytes */
 
 	for (i = 0; i < n; i++, j++)
 	{
@@ -41,12 +40,6 @@ char *_strncat(char *dest, char *src, int n)
 			dest[j] = src[i];
 		}
 	}
-
-	/* if len < n, add \0
-	if (len < n)
-	{
-		dest[j] = '\0';
-		} */
 
 	/* return pointer to concatenated string */
 	return (dest);
