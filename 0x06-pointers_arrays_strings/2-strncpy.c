@@ -15,10 +15,12 @@ char *_strncpy(char *dest, char *src, int n)
 
 	/* copy src into dest while src contains values and i < n */
 
-	while (src[i] && i < n)
+	for (i = 0; src[i]; i++)
 	{
-		dest[i] = src[i];
-		i++;
+		if (i < n)
+			dest[i] = src[i];
+		else
+			break;
 	}
 
 	/* return the copied string */
