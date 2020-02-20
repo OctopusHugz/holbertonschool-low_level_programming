@@ -10,6 +10,7 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i, j;
+
 	i = 0;
 	j = 0;
 
