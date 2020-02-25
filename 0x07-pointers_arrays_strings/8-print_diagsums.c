@@ -9,6 +9,13 @@
 
 void print_diagsums(int *a, int size)
 {
-	printf("113, 1016\n");
-	printf("1214556093, 1137318\n");
+	int i, j;
+
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			printf("%d\n", a[i]);
+		}
+	}
 }
