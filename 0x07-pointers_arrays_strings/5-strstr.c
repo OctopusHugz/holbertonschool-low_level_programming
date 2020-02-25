@@ -12,6 +12,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i, j;
+
 	j = 0;
 
 	for (i = 0; haystack[i];)
@@ -22,7 +23,6 @@ char *_strstr(char *haystack, char *needle)
 			{
 				j++;
 				return (haystack + i);
-				break;
 			}
 			else
 				i++;
