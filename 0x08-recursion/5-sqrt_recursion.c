@@ -3,6 +3,7 @@
 /**
  * _sqrt_recursion - returns natural square root of a number
  * @n: number to return the square root of
+ * @mult: multiplier in helper function
  *
  * Return: natural square root if exists, or -1 if it doesn't exist
  */
