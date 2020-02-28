@@ -12,27 +12,22 @@
 
 int main(int argc, __attribute__((unused)) char *argv[])
 {
-	int money = 0;
-	/*
 	int i, change, money, count;
 
 	int cents[5] = {25, 10, 5, 2, 1};
 
 	i = 0;
 	count = 0;
-	*/
-	money = atoi(argv[1]);
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (money < 0)
-		printf("0\n");
-	/*
 	else
 	{
+		money = atoi(argv[1]);
+
 		while(money != 0)
 		{
 			if (money >= cents[i])
@@ -43,7 +38,9 @@ int main(int argc, __attribute__((unused)) char *argv[])
 			}
 			i++;
 		}
+		if (money < 0)
+			printf("0\n");
 	}
-	printf("%d\n", count); */
+	printf("%d\n", count);
 	return (0);
 }
