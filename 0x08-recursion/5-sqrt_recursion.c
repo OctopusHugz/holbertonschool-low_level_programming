@@ -15,6 +15,14 @@ int _sqrt_recursion(int n)
 	return (findsq(n, 1));
 }
 
+/**
+ * findsq - helper function to find the square and return it to _sqrt_recursion
+ * @n: number to return the square root of
+ * @mult: multiplier in helper function
+ *
+ * Return: sqrt of n if it exists, else -1
+ */
+
 int findsq(int n, int mult)
 {
 	if (mult * mult == n)
