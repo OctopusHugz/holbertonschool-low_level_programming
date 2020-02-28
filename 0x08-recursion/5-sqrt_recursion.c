@@ -7,12 +7,19 @@
  * Return: natural square root if exists, or -1 if it doesn't exist
  */
 
+int findsq(int n, int mult);
+
 int _sqrt_recursion(int n)
 {
-	if (n == 1)
-		return (1);
-	else if (n < 0)
+	return (findsq(n, 1));
+}
+
+int findsq(int n, int mult)
+{
+	if (mult * mult == n)
+		return (mult);
+	else if (mult * mult > n)
 		return (-1);
 	else
-		return (n);
+		return (findsq(n, mult + 1));
 }
