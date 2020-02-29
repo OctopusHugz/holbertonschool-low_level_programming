@@ -26,21 +26,24 @@ int main(int argc, __attribute__((unused)) char *argv[])
 	}
 	else
 	{
-		money = atoi(argv[1]);
-
-		while (money != 0)
-		{
-			if (money >= cents[i])
-			{
-				change = money / cents[i];
-				money = money % cents[i];
-				count += change;
-			}
-			i++;
-		}
-		if (money < 0)
+		if (atoi(argv[1]) < 0)
 			printf("0\n");
+		else
+		{
+			money = atoi(argv[1]);
+
+			while (money != 0)
+			{
+				if (money >= cents[i])
+				{
+					change = money / cents[i];
+					money = money % cents[i];
+					count += change;
+				}
+				i++;
+			}
+			printf("%d\n", count);
+		}
 	}
-	printf("%d\n", count);
 	return (0);
 }
