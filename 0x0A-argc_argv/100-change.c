@@ -28,7 +28,7 @@ int main(int argc, __attribute__((unused)) char *argv[])
 	{
 		money = atoi(argv[1]);
 
-		while(money != 0)
+		while (money != 0)
 		{
 			if (money >= cents[i])
 			{
