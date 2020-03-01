@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 			j = 0;
 			while (argv[i][j])
 			{
-				if (isdigit(argv[i][j]) && (atoi(argv[i]) > 0))
+				if (isdigit(argv[i][j]) && (atoi(argv[i]) >= 0))
 				{
 					sum += atoi(&argv[i][j]);
 					j++;
