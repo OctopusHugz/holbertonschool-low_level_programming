@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
 		}
 		printf("%d\n", sum);
 	}
+	else if (argc == 2 && atoi(argv[1]) != 0)
+		printf("%d\n", atoi(argv[1]));
 	else if (argc == 1)
 		printf("0\n");
 	return (0);
