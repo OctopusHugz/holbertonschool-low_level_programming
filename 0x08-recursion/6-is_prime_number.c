@@ -25,10 +25,10 @@ int is_prime_number(int n)
 
 int divider(int n, int div)
 {
-	if (n % div == 0)
-		return (0);
-	else if (n ==  div)
+	if (n == div)
 		return (1);
+	else if (n % div == 0 || n < div)
+		return (0);
 	else
 		return (divider(n, div + 1));
 }
