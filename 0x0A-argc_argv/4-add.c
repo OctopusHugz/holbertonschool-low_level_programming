@@ -40,5 +40,7 @@ int main(int argc, char *argv[])
 	}
 	else if (argc == 1)
 		printf("0\n");
+	else if (argc == 2)
+		printf("%d\n", atoi(argv[1]));
 	return (0);
 }
