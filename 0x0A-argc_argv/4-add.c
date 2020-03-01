@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 			j = 0;
 			while (argv[i][j])
 			{
-				if (isdigit(argv[i][j]) && (atoi(argv[i]) >= 0))
+				if (isdigit(argv[i][j]) && (atoi(&argv[i][j]) >= 0))
 				{
 					sum += atoi(&argv[i][j]);
 					j++;
@@ -40,7 +40,5 @@ int main(int argc, char *argv[])
 	}
 	else if (argc == 1)
 		printf("0\n");
-	else if (argc == 2)
-		printf("%d\n", atoi(argv[1]));
 	return (0);
 }
