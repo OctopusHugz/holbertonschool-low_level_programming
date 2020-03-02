@@ -1,1 +1,10 @@
+*
+!*/
+!*.*
 *~
+*main.c
+*_putchar.c
+*#
+*.o
+*0x09-static_libraries/*.c
+*a.out
