@@ -1,59 +1,53 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
 /**
  * main - prints all possible combinations of 2 two digit numbers
+ * @c: The character to print
  * Return: 0 if no errors
  */
 
+int _putchar(char c);
+
 int main(void)
 {
-	int w;
-	int x;
-	int y;
-	int z;
+	int x, y;
 
-	for (w = '0'; w <= '9'; w++)
+	for (x = 0; x <= 99; x++)
 	{
-		for (x = '0'; x <= '9';)
+		for (y = 0; y <= 99; y++)
 		{
-			if (w == '0' && x == '1' && y == '0' && z =='0')
+			if (x == 98 && y == 99)
 			{
-
-				for (y = '0'; y <= '9'; y++)
-				{
-					if (y != '9' && z != '9')
-					{
-						for (z = '0'; z <= '9';)
-						{
-							putchar(w);
-							putchar(x);
-							putchar(' ');
-							putchar(y);
-							if (w == '0' && x == '0' && y == '0' && z == '0')
-							{
-								z++;
-								putchar(z);
-								z++;
-							}
-							else
-							{
-								putchar(z);
-								z++;
-							}
-							putchar(',');
-							putchar(' ');
-						}
-					}
-					else
-					{
-						x++;
-					}
-				}
+				_putchar(x / 10 + '0');
+				_putchar(x % 10 + '0');
+				_putchar(' ');
+				_putchar(y / 10 + '0');
+				_putchar(y % 10 + '0');
+			}
+			else if (y > x)
+			{
+				_putchar(x / 10 + '0');
+				_putchar(x % 10 + '0');
+				_putchar(' ');
+				_putchar(y / 10 + '0');
+				_putchar(y % 10 + '0');
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
-		putchar('\n');
-		return (0);
-
 	}
+	_putchar('\n');
+	return (0);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
