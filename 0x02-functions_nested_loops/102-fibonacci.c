@@ -17,13 +17,21 @@ int main(void)
 
 	while (i < 50)
 	{
-		printf("%ld, ", current_number);
-		next_number = old_number + current_number;
+		if (i == 49)
+		{
+			printf("%ld\n", current_number);
+			break;
+		}
+		else
+		{
+			printf("%ld, ", current_number);
+			next_number = old_number + current_number;
 
-		old_number = current_number;
-		current_number = next_number;
+			old_number = current_number;
+			current_number = next_number;
 
-		i++;
+			i++;
+		}
 	}
 	return (0);
 }
