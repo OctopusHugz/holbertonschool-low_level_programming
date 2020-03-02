@@ -4,7 +4,6 @@
  * print_times_table - prints the nth times table
  * @num_rows: number of rows to print
  * @num_cols: number of columns to print
- * @n: intenger to print times table of
  */
 
 void print_helper(int num_rows, int num_cols);
@@ -12,9 +11,7 @@ void print_helper(int num_rows, int num_cols);
 void print_times_table(int n)
 {
 	if (n < 15 && n >= 0)
-	{
 		print_helper(n, n);
-	}
 }
 
 /**
