@@ -16,23 +16,20 @@ int main(void)
 	{
 		for (y = 0; y <= 99; y++)
 		{
-			if (x == 98 && y == 99)
+			if (y > x)
 			{
 				_putchar(x / 10 + '0');
 				_putchar(x % 10 + '0');
 				_putchar(' ');
 				_putchar(y / 10 + '0');
 				_putchar(y % 10 + '0');
-			}
-			else if (y > x)
-			{
-				_putchar(x / 10 + '0');
-				_putchar(x % 10 + '0');
-				_putchar(' ');
-				_putchar(y / 10 + '0');
-				_putchar(y % 10 + '0');
-				_putchar(',');
-				_putchar(' ');
+				if (x == 98 && y == 99)
+					break;
+				else
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 		}
 	}
