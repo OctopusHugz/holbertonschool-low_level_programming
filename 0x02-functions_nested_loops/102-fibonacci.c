@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i, old_number, current_number, next_number;
+	long int i, old_number, current_number, next_number;
 
 	/* Initialize numbers to start sequence */
 	old_number = 1;
@@ -17,7 +17,7 @@ int main(void)
 
 	while (i < 50)
 	{
-		printf("%d, ", current_number);
+		printf("%ld, ", current_number);
 		next_number = old_number + current_number;
 
 		old_number = current_number;
