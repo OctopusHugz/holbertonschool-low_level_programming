@@ -9,5 +9,7 @@
 
 int _atoi(char *s)
 {
+	if(*s)
+		s++;
 	return (0);
 }
