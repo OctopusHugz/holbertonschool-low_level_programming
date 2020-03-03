@@ -22,7 +22,7 @@ char *_strdup(char *str)
 
 	/* malloc memory for new array and return NULL if not enough memory */
 
-	array = (char *) malloc(sizeof(char) * len);
+	array = (char *) malloc(sizeof(char) * len + 1);
 
 	if (array == NULL)
 		return (NULL);
@@ -31,7 +31,6 @@ char *_strdup(char *str)
 
 	for (i = 0; i < len; i++)
 		array[i] = str[i];
-	array[i] = '\0';
 
 	/* return pointer to newly allocated memory */
 
