@@ -2,8 +2,7 @@
 
 /**
  * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
+ * @s: string to return the length of
  *
  * Return: pointer to concatenated string
  */
