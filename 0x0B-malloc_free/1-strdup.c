@@ -13,6 +13,7 @@ char *_strdup(char *str)
 	char *array;
 
 	/* loop through str to find length and store in len if str != NULL */
+
 	if (str == NULL)
 		return (NULL);
 
@@ -22,17 +23,13 @@ char *_strdup(char *str)
 	/* malloc memory for new array and return NULL if not enough memory */
 
 	array = malloc(sizeof(char) * len);
-	/* if (!array)
-	   return (NULL); */
 
 	/* copy str into new array */
+
 	for (i = 0; i < len; i++)
 		array[i] = str[i];
-	array[i] = '\0';
 
 	/* return pointer to newly allocated memory */
-	if (array)
-		return (array);
-	else
-		return (NULL);
+
+	return (array);
 }
