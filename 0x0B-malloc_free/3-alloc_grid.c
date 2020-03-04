@@ -3,9 +3,7 @@
 
 /**
  * alloc_grid - returns a pointer to 2D array of ints
- * @width: width of 2D array
- * @height: height of 2D array
- *
+ * @c: char to print
  * Return: pointer to 2D array of ints
  */
 
@@ -36,6 +34,14 @@ int **alloc_grid(int width, int height)
 	free(array);
 	return (array);
 }
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 
 int _putchar(char c)
 {
