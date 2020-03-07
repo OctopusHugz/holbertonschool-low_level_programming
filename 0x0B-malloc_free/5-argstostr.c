@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 			av_len++;
 
 	/* malloc memory for new array and null check */
-	array = malloc(av_len * sizeof(char) + 1);
+	array = malloc(av_len * sizeof(char) + ac + 1);
 	if (array == NULL)
 		return (NULL);
 
