@@ -18,7 +18,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	/* find strlen of av[rows][cols] and store in av_len */
-	for (cols = 0; av[rows][cols]; rows++)
+	for (cols = 0; rows < ac; rows++)
 		for (; av[rows][cols]; cols++)
 			av_len++;
 
@@ -29,12 +29,12 @@ char *argstostr(int ac, char **av)
 
 	/* start copying av into array */
 	rows = 0, i = 0;
-	for (cols = 0; av[rows][cols]; rows++)
+	for (cols = 0; rows < ac; rows++)
 	{
 		for (; av[rows][cols]; i++, cols++)
 			array[i] = av[rows][cols];
 		array[i] = '\n';
 	}
-	array[i + 1] = '\0';
+	array[i+1] = '\0';
 	return (array);
 }
