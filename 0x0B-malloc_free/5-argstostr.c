@@ -35,6 +35,6 @@ char *argstostr(int ac, char **av)
 			array[i] = av[rows][cols];
 		array[i] = '\n';
 	}
-	array[i+1] = '\0';
+	array[i + 1] = '\0';
 	return (array);
 }
