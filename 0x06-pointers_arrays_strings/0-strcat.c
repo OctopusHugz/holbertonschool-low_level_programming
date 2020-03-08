@@ -10,19 +10,16 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i, j, len;
+	int i, len;
 
-	/* get strlen and store in len */
-
-	for (len = 0; src[len]; len++)
-		;
-	/* move counter to null terminating byte */
 	for (i = 0; dest[i]; i++)
 		;
-	for (j = 0; j < len; j++)
+
+	for (len = 0; src[len]; len++)
 	{
-		dest[i] = src[j];
+		dest[i] = src[len];
 		i++;
 	}
+
 	return (dest);
 }
