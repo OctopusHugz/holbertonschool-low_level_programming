@@ -33,7 +33,7 @@ char *_strstr(char *haystack, char *needle)
 
 	}
 
-	if (haystack[i] == needle[j])
+	if (!needle[j])
 		return (haystack);
 	else
 		return (NULL);
