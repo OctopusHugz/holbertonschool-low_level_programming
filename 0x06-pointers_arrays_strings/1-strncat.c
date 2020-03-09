@@ -14,33 +14,14 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i, j, len;
 
-	/* move to end of dest */
-
-	for (j = 0; dest[j];)
-	{
-		j++;
-	}
-
-	/* find len of src */
-	for (len = 0; src[len];)
-	{
-		len++;
-	}
-/* loop through i and append to dest up until n bytes */
-
-	for (i = 0; i < n; i++, j++)
-	{
-		if (len < n && i == n - 1)
-		{
-			dest[j] = src[i];
-			dest[j] = '\0';
-		}
-		else
-		{
-			dest[j] = src[i];
-		}
-	}
-
-	/* return pointer to concatenated string */
+	for (i = 0; dest[i]; i++)
+		;
+	for (len = 0; src[len]; len++)
+		;
+	if (n > len)
+		n = len;
+	for (j = 0; j < n; i++, j++)
+		dest[i] = src[j];
+	dest[i] = '\0';
 	return (dest);
 }
