@@ -22,9 +22,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
+	if (name == NULL || owner == NULL)
+		return (NULL);
+
 	dup_name = malloc((_strlen(name) + 1) * sizeof(char));
 	if (dup_name == NULL)
 	{
+		free(dog);
 		free(dup_name);
 		return (NULL);
 	}
@@ -49,32 +53,37 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 /**
  * _strlen - returns the length of a string
- * @s: a string (pointer to the first letter) provided by user
- * Return: string length
+ * @s: String to return the lenght of
+ *
+ * Return: 0 if success
  */
+
 int _strlen(char *s)
 {
-	int len;
+	int i = 0;
+	int len = 0;
 
-	while (s[len] != '\0')
+	for (; s[i] != '\0'; i++)
+	{
 		len++;
+	}
 	return (len);
 }
 
 /**
- * *_strcpy - copies a string to *dest
- *@dest: Pointer to copy string to
- *@src: string to copy
- * Return: *dest
+ * _strcpy - copies the string pointed to by src to buffer pointed to by dest
+ * @dest: buffer destination to print to
+ * @src: string to copy
+ *
+ * Return: pointer to dest
  */
+
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0, j;
+	int len;
 
-	while (src[i] != '\0')
-		i++;
-	for (j = 0; j < i; j++)
-		dest[j] = src[j];
-	dest[j] = '\0';
+	for (len = 0; src[len]; len++)
+		dest[len] = src[len];
+	dest[len] = '\0';
 	return (dest);
 }
