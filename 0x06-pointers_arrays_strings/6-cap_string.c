@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define LOWER_CHECK (str[i] >= 'a' && str[i] <= 'z')
 
 /**
  * cap_string - capitalizes all words of a string
@@ -13,28 +14,25 @@ char *cap_string(char *str)
 	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')',
 		      '{', '}'};
 
-	for (i = 0; str[i]; i++)
+	for (i = 0; i < 1; i++)
 	{
-		if (i == 0)
+		if (LOWER_CHECK)
+			str[i] -= 32;
+	}
+	for (i = 1; str[i]; i++)
+	{
+		for (j = 0; sep[j]; j++)
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] -= 32;
-		}
-		else
-		{
-			for (j = 0; sep[j]; j++)
+			if (str[i] == sep[j])
 			{
-				if (str[i] == sep[j])
+				i++;
+				if (LOWER_CHECK)
+					str[i] -= 32;
+				else
 				{
 					i++;
-					if (str[i] >= 'a' && str[i] <= 'z')
+					if (LOWER_CHECK)
 						str[i] -= 32;
-					else
-					{
-						i++;
-						if (str[i] >= 'a' && str[i] <= 'z')
-							str[i] -= 32;
-					}
 				}
 			}
 		}
