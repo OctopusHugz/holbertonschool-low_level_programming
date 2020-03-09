@@ -1,3 +1,4 @@
+#include <string.h>
 #include "dog.h"
 
 /**
@@ -11,20 +12,34 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
 	char *dup_name, *dup_owner;
 
-	if (name == NULL)
-		return (NULL);
-	dup_name = _strdup(name);
+	dog_t *dog = malloc(sizeof(dog_t));
 
-	if (owner == NULL)
-		return (NULL);
-	dup_owner = _strdup(owner);
-
-	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
+	{
+		free(dog);
 		return (NULL);
+	}
+
+	dup_name = malloc((_strlen(name) + 1) * sizeof(char));
+	if (dup_name == NULL)
+	{
+		free(dup_name);
+		return (NULL);
+	}
+
+	dup_owner = malloc((_strlen(owner) + 1) * sizeof(char));
+	if (dup_owner == NULL)
+	{
+		free(dog);
+		free(dup_name);
+		free(dup_owner);
+		return (NULL);
+	}
+
+	_strcpy(dup_name, name);
+	_strcpy(dup_owner, owner);
 
 	dog->name = dup_name;
 	dog->age = age;
@@ -33,38 +48,33 @@ dog_t *new_dog(char *name, float age, char *owner)
 }
 
 /**
- * _strdup - copies a string into newly allocated memory and returns pointer
- * @str: string to copy into new memory space
- *
- * Return: pointer to newly allocated memory
+ * _strlen - returns the length of a string
+ * @s: a string (pointer to the first letter) provided by user
+ * Return: string length
  */
-
-char *_strdup(char *str)
+int _strlen(char *s)
 {
-	int i, len;
-	char *array;
+	int len;
 
-	/* loop through str to find length and store in len if str != NULL */
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}
 
-	if (str == NULL)
-		return (NULL);
+/**
+ * *_strcpy - copies a string to *dest
+ *@dest: Pointer to copy string to
+ *@src: string to copy
+ * Return: *dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0, j;
 
-	for (len = 0; str[len]; len++)
-		;
-
-	/* malloc memory for new array and return NULL if not enough memory */
-
-	array = (char *) malloc(sizeof(char) * len + 1);
-
-	if (array == NULL)
-		return (NULL);
-
-	/* copy str into new array */
-
-	for (i = 0; i < len; i++)
-		array[i] = str[i];
-
-	/* return pointer to newly allocated memory */
-
-	return (array);
+	while (src[i] != '\0')
+		i++;
+	for (j = 0; j < i; j++)
+		dest[j] = src[j];
+	dest[j] = '\0';
+	return (dest);
 }
