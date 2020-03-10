@@ -23,4 +23,6 @@ int is_palindrome(char *s);
 
 int wildcmp(char *s1, char *s2);
 
+int pal_check(char *s, int beg, int end);
+
 #endif /* HOLBERTON_H */
