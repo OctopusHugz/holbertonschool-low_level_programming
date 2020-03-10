@@ -7,18 +7,15 @@
  * Return: 1 if string is a palindrome, 0 if not
  */
 
-int pal_check(char *s, int beg, int end);
-
-int _strlen_recursion(char *s);
-
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
+
 	return (pal_check(s, 0, len - 1));
 }
 
 /**
- * pal_checker - helps the is_palindrome function determine if it's palinddrome
+ * pal_check - helps the is_palindrome function determine if it's palinddrome
  * @s: string to check if palindrome
  * @beg: beginning of string
  * @end: end of string
