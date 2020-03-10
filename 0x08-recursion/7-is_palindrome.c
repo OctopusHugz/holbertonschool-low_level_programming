@@ -7,33 +7,33 @@
  * Return: 1 if string is a palindrome, 0 if not
  */
 
-int helper(char *s, char *end, int len);
+int pal_check(char *s, int beg, int end);
 
 int _strlen_recursion(char *s);
 
 int is_palindrome(char *s)
 {
-	return (helper(s, s + _strlen_recursion(s), _strlen_recursion(s)));
+	int len = _strlen_recursion(s);
+	return (pal_check(s, 0, len - 1));
 }
 
 /**
- * helper - helps the is_palindrome function determine if it's a palinddrome
+ * pal_checker - helps the is_palindrome function determine if it's palinddrome
  * @s: string to check if palindrome
- * @len: length of string to check
+ * @beg: beginning of string
+ * @end: end of string
  *
  * Return: 1 if palindrome, 0 if not
  */
 
-int helper(char *s, char *end, int len)
+int pal_check(char *s, int beg, int end)
 {
-	if (&s == &end && len % 2 != 0)
-	    return (1);
-	else if ((&s == (&end - 1) && s == end))
-		return (1);
-	else if (s == end)
-		return (helper(s + 1, end - 1, len));
-	else
+	if (*(s + beg) != *(s + end))
 		return (0);
+	if (beg >= end)
+		return (1);
+	else
+		return (pal_check(s, beg + 1, end - 1));
 }
 
 /**
