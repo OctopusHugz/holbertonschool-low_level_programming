@@ -21,9 +21,8 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 6)
 	{
-		printf("ops[i].op is: %s\n", ops[i].op);
-		if (s == ops[i].op)
-			return (ops[i].f);
+		if (strcmp(s, ops[i].op) == 0)
+			break;
 		i++;
 	}
 	return (ops[i].f);
