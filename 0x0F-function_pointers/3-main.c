@@ -25,7 +25,8 @@ int main(int argc, char **argv)
 
 	operator = argv[2][0];
 
-	if (op == NULL)
+	if (operator != '+' && operator != '-' && operator != '*' &&
+	    operator != '/' && operator != '%')
 	{
 		printf("Error\n");
 		exit(99);
