@@ -1,6 +1,3 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "calc.h"
 
 /**
@@ -27,12 +24,6 @@ int main(int argc, char **argv)
 	num2 = atoi(argv[3]);
 
 	operator = argv[2][0];
-
-	if (op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 
 	if ((operator == '/' || operator == '%') && num2 == 0)
 	{
