@@ -11,29 +11,23 @@ int _strlen(char *s);
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, len1, len2;
+	int i, j;
 	char *array;
-
-	len1 = 0;
-	len2 = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-
-	array = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
+	array = (char *) malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
 
 	if (array == NULL)
 		return (NULL);
 
-	for (i = 0; i < len1; i++)
+	for (i = 0; s1[i]; i++)
 		array[i] = s1[i];
 
-	for (j = 0; j < len2; i++, j++)
+	for (j = 0; s2[j]; i++, j++)
 		array[i] = s2[j];
 
 	return (array);
