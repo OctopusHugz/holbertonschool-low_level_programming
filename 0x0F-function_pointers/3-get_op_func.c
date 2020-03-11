@@ -21,9 +21,10 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 6)
 	{
+		printf("ops[i].op is: %s\n", ops[i].op);
 		if (s == ops[i].op)
 			return (ops[i].f);
 		i++;
 	}
-	return (NULL);
+	return (ops[i].f);
 }
