@@ -31,6 +31,7 @@ char *_strdup(char *str)
 
 	for (i = 0; i < len; i++)
 		array[i] = str[i];
+	array[i] = '\0';
 
 	/* return pointer to newly allocated memory */
 
