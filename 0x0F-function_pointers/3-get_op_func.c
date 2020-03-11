@@ -19,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	while (i < 6)
+	while (ops[i].op)
 	{
 		if (strcmp(s, ops[i].op) == 0)
 			break;
