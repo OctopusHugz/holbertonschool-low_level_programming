@@ -13,17 +13,17 @@ int main(int argc, char **argv)
 	int num2;
 	char operator;
 
-	/*num1 = atoi(argv[1]);*/
-	num2 = atoi(argv[3]);
-
-	operator = argv[2][0];
-	printf("Operator is: %c, num2 is: %i\n", operator, num2);
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+
+	/*num1 = atoi(argv[1]);*/
+	num2 = atoi(argv[3]);
+
+	operator = argv[2][0];
+	printf("Operator is: %c, num2 is: %i\n", operator, num2);
 
 	if (operator != '+' && operator != '-' && operator != '*' &&
 	    operator != '/' && operator != '%')
