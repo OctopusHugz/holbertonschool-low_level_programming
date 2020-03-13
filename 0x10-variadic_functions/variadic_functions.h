@@ -21,4 +21,12 @@ typedef struct type
 
 } types;
 
+void print_char(va_list arguments);
+
+void print_int(va_list arguments);
+
+void print_float(va_list arguments);
+
+void print_string(va_list arguments);
+
 #endif /* VARIADIC_FUNCTIONS_H */
