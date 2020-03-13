@@ -19,10 +19,19 @@ void print_all(const char * const format, ...)
 
 	va_start(arguments, format);
 
-	while (types[i].string)
+	i = 0;
+	while (format[i])
 	{
-		if (strcmp(types[i].string, format) == 0)
-			return (types[i].f);
+		j = 0;
+		while (types[j].string)
+		{
+			if (format[i] == *(types[j]).string)
+			{
+				types[j].f(arguments);
+				printf(", ");
+			}
+			j++;
+		}
 		i++;
 	}
 	putchar('\n');
@@ -56,7 +65,7 @@ void print_int(va_list arguments)
 
 void print_float(va_list arguments)
 {
-	printf("%f", va_arg(arguments, int));
+	printf("%f", va_arg(arguments, double));
 }
 
 /**
