@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 	while (format[i] && format != NULL)
 	{
 		j = 0;
-		while (types[j].string)
+		while (types[j].string != NULL)
 		{
 			if (format[i] == *(types[j]).string)
 			{
