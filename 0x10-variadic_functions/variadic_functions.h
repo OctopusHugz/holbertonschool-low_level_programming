@@ -15,18 +15,18 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /**
- * struct type - struct type
+ * struct specifiers - struct specifiers
  *
  * @string: The string
  * @f: The function associated
  */
 
-typedef struct type
+typedef struct specifiers
 {
 	char *string;
 	void (*f)();
 
-} types;
+} specifiers;
 
 void print_char(va_list arguments);
 
