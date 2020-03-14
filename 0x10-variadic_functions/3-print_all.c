@@ -9,6 +9,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arguments;
 	int i, j;
+	char *sep = "";
 	types types[] = {
 		{"c", print_char},
 		{"i", print_int},
@@ -27,9 +28,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == *(types[j]).string)
 			{
+				printf("%s", sep);
 				types[j].f(arguments);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				sep = ", ";
 			}
 			j++;
 		}
