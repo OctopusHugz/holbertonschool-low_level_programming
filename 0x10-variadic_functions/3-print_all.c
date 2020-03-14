@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 	va_start(arguments, format);
 
 	i = 0;
-	while (format[i])
+	while (format[i] && format != NULL)
 	{
 		j = 0;
 		while (types[j].string)
