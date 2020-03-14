@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 	va_list arguments;
 	int i, j;
 	char *sep = "";
-	types types[] = {
+	specifiers specs[]= {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -24,12 +24,12 @@ void print_all(const char * const format, ...)
 	while (format[i] && format != NULL)
 	{
 		j = 0;
-		while (types[j].string != NULL)
+		while (specs[j].string != NULL)
 		{
-			if (format[i] == *(types[j]).string)
+			if (format[i] == *(specs[j]).string)
 			{
 				printf("%s", sep);
-				types[j].f(arguments);
+				specs[j].f(arguments);
 				sep = ", ";
 			}
 			j++;
