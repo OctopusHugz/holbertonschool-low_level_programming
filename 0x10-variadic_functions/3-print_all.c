@@ -80,6 +80,6 @@ void print_string(va_list arguments)
 	char *string = va_arg(arguments, char *);
 
 	if (string == NULL)
-		printf("(nil)");
+		string = "(nil)";
 	printf("%s", string);
 }
