@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while(specs[j].string)
+		while (specs[j].string)
 		{
 			if (format[i] == *(specs[j]).string)
 			{
