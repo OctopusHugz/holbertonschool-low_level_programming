@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arguments;
-	int i, j;
+	unsigned int i, j;
 	char *sep = "";
 	specifiers specs[] = {
 		{"c", print_char},
@@ -31,6 +31,7 @@ void print_all(const char * const format, ...)
 				printf("%s", sep);
 				specs[j].f(arguments);
 				sep = ", ";
+				break;
 			}
 			j++;
 		}
