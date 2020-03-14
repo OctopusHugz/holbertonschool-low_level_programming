@@ -21,17 +21,16 @@ void print_all(const char * const format, ...)
 	va_start(arguments, format);
 
 	i = 0;
-	while (format[i] != '\0' && format != NULL)
+	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4)
+		while(specs[j].string)
 		{
 			if (format[i] == *(specs[j]).string)
 			{
 				printf("%s", sep);
 				specs[j].f(arguments);
 				sep = ", ";
-				break;
 			}
 			j++;
 		}
