@@ -18,13 +18,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		args = va_arg(arguments, char *);
 
-		if (strcmp(args, "\0") == 0)
+		if (args == NULL)
 		{
 			printf("(nil)");
 			break;
 		}
-		else if (strcmp(args, "\0") != 0)
-			printf("%s", args);
+		printf("%s", args);
 		if (separator != NULL && i < n - 1)
 			printf("%s", separator);
 	}
