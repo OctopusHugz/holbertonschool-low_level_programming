@@ -14,6 +14,13 @@ void print_strings(const char *separator, const unsigned int n, ...);
 
 void print_all(const char * const format, ...);
 
+/**
+ * struct type - struct type
+ *
+ * @string: The string
+ * @f: The function associated
+ */
+
 typedef struct type
 {
 	char *string;
