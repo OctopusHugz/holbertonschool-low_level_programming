@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arguments;
-	unsigned int i, j;
+	int i, j;
 	char *sep = "";
 	types types[] = {
 		{"c", print_char},
@@ -57,7 +57,7 @@ void print_char(va_list arguments)
 
 void print_int(va_list arguments)
 {
-	printf("%i", va_arg(arguments, int));
+	printf("%d", va_arg(arguments, int));
 }
 
 /**
