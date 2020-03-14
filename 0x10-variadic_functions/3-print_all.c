@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arguments;
-	int i, j;
+	unsigned int i, j;
 	char *sep = "";
 	types types[] = {
 		{"c", print_char},
