@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 	va_list arguments;
 	int i, j;
 	char *sep = "";
-	specifiers specs[]= {
+	specifiers specs[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
