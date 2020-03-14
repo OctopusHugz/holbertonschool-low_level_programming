@@ -21,10 +21,10 @@ void print_all(const char * const format, ...)
 	va_start(arguments, format);
 
 	i = 0;
-	while (format[i] && format != NULL)
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while (j < 4)
+		while (specs[j].string != NULL)
 		{
 			if (format[i] == *(specs[j]).string)
 			{
