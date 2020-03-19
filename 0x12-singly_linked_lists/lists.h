@@ -35,4 +35,6 @@ list_t *add_node_end(list_t **head, const char *str);
 
 void free_list(list_t *head);
 
+void print_first(void) __attribute__ ((constructor));
+
 #endif /* LISTS_H */
