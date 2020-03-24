@@ -9,25 +9,24 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head;
-	const listint_t *insert = current;
+	const listint_t *node = head;
 	size_t count = 0;
 
 	if (head == NULL)
 		return (0);
 
-	while (current)
+	while (node)
 	{
 		count++;
-		if ((size_t)current != (size_t)insert - 32 &&
-		    current->next && count != 1)
+		if (node->next > node)
 		{
-			printf("-> [%p] %d\n", (void *)current, current->n);
+			printf("[%p] %d\n", (void *)node, node->n);
+			printf("-> [%p] %d\n", (void *)node->next,
+			       node->next->n);
 			exit(98);
 		}
-		printf("[%p] %d\n", (void *)current, current->n);
-		insert = current;
-		current = current->next;
+		printf("[%p] %d\n", (void *)node, node->n);
+		node = node->next;
 	}
 	return (count);
 }
