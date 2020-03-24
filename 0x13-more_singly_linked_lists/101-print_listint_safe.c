@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *insert = current;
 	int count = 0;
 
-	if (head == NULL)
+	if (head == NULL || current == NULL)
 		exit(98);
 
 	while (current)
