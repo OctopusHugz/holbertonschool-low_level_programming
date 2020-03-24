@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *insert = current;
 	size_t count = 0;
 
-	if (head == NULL || current == NULL)
+	if (head == NULL)
 		return (0);
 
 	while (current)
