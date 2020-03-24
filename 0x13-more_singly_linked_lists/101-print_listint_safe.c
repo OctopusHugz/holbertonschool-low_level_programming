@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	int count = 0;
 
 	if (head == NULL || current == NULL)
-		exit(98);
+		return (0);
 
 	while (current)
 	{
@@ -33,5 +33,5 @@ size_t print_listint_safe(const listint_t *head)
 		current = current->next;
 		sleep(1);
 	}
-	return (0);
+	return (count);
 }
