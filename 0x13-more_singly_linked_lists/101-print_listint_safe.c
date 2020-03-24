@@ -23,7 +23,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			printf("-> [%p] %d\n", (void *)node->next,
 			       node->next->n);
-			exit(98);
+			return (count);
 		}
 		node = node->next;
 	}
