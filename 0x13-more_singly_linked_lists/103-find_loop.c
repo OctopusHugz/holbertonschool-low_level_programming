@@ -9,7 +9,17 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
+	listint_t *node = head;
+
 	if (head == NULL)
 		return (NULL);
-	return (NULL);
+
+	while (node)
+	{
+		if (node->next >= node)
+			return (node);
+		node = node->next;
+	}
+	node = NULL;
+	return (node);
 }
