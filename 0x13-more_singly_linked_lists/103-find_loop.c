@@ -23,6 +23,14 @@ listint_t *find_listint_loop(listint_t *head)
 	return (node);
 }
 
+/**
+ * loop_finder - finds a loop in a linked list
+ * and returns the node where it begins
+ * @head: pointer to the head of the linked list
+ *
+ * Return: pointer to the node where the loop begins, or NULL if no loop
+ */
+
 listint_t *loop_finder(listint_t *head)
 {
 	listint_t *tort;
