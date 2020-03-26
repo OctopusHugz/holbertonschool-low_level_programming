@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <string.h>
-#include <limits.h>
 
 /**
  * binary_to_uint - converts a binary numnber to an unsigned int
@@ -13,9 +11,9 @@ unsigned int binary_to_uint(const char *b)
 {
 	int len;
 	unsigned int i = 0, place_mult = 1, num = 0;
-	char *string = malloc(strlen(b));
+	char *string;
 
-	if (string == NULL || b == NULL)
+	if (b == NULL)
 		return (0);
 
 	for (len = 0; b[len];)
@@ -25,6 +23,9 @@ unsigned int binary_to_uint(const char *b)
 		else
 			return (0);
 	}
+	string = malloc(len);
+	if (string == NULL)
+		return (0);
 	len--;
 
 	while (len >= 0)
