@@ -41,6 +41,6 @@ unsigned int binary_to_uint(const char *b)
 			num += (1 * place_mult);
 		place_mult *= 2;
 	}
-
+	free(string);
 	return (num);
 }
