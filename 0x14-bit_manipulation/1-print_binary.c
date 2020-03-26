@@ -16,6 +16,7 @@ void print_binary(unsigned long int n)
 	if (n == 1)
 	{
 		_putchar('1');
+		return;
 	}
 	else if (is_even(n))
 	{
@@ -38,7 +39,7 @@ void print_binary(unsigned long int n)
 
 int is_even(unsigned long int n)
 {
-	unsigned long int i = 2;
+	unsigned long int i = 0;
 
 	while (i <= n)
 	{
