@@ -8,5 +8,11 @@
 
 int get_endianness(void)
 {
-	return (1);
+	int i = 1;
+	char *c = (char *)&i;
+
+	if (*c)
+		return (1);
+	else
+		return (0);
 }
