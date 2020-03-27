@@ -8,6 +8,14 @@
 
 void print_binary(unsigned long int n)
 {
+	int i;
+
+	if (n == ULONG_MAX)
+	{
+		for (i = 0; i < 32; i++)
+			_putchar('1');
+		return;
+	}
 	if (n == 0)
 	{
 		_putchar('0');
