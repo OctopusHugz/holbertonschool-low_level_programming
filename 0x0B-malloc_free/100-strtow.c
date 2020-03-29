@@ -9,8 +9,36 @@
 
 char **strtow(char *str)
 {
+	char **args = malloc(100);
+	int i = 0, j = 0;
+
 	if (str == NULL)
 		return (NULL);
 
-	return (0);
+	if (args == NULL)
+		return (NULL);
+
+	while (str[j])
+	{
+		if (str[j] != ' ')
+		{
+			args[i][j] = str[j];
+			j++;
+			if (str[j] == ' ')
+			{
+				args[i][j] = '\0';
+				i++;
+				j = 0;
+			}
+		}
+
+		/* if (args[i][j] == '\0')
+		{
+			i++;
+			j = 0;
+		} */
+		j++;
+	}
+	/* free(args); */
+	return (args);
 }
