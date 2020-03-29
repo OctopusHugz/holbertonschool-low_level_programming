@@ -15,16 +15,16 @@ int main(void)
 	current_number = 1;
 	i = 0;
 
-	while (i < 98)
+	while (i < 88)
 	{
-		if (i == 49)
+		if (i == 87)
 		{
 			printf("%ld\n", current_number);
 			break;
 		}
 		else
 		{
-			printf("%ld, ", current_number);
+			printf("%ld, \n", current_number);
 			next_number = old_number + current_number;
 
 			old_number = current_number;
