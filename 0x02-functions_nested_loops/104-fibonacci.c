@@ -8,23 +8,23 @@
 
 int main(void)
 {
-	long int i, old_number, current_number, next_number;
+	long double i, old_number, current_number, next_number;
 
 	/* Initialize numbers to start sequence */
 	old_number = 1;
 	current_number = 1;
 	i = 0;
 
-	while (i < 88)
+	while (i < 98)
 	{
-		if (i == 87)
+		if (i == 97)
 		{
-			printf("%ld\n", current_number);
+			printf("%.Lf\n", current_number);
 			break;
 		}
 		else
 		{
-			printf("%ld, ", current_number);
+			printf("%.Lf, ", current_number);
 			next_number = old_number + current_number;
 
 			old_number = current_number;
