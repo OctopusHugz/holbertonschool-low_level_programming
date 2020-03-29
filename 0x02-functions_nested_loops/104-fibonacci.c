@@ -24,7 +24,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%ld, \n", current_number);
+			printf("%ld, ", current_number);
 			next_number = old_number + current_number;
 
 			old_number = current_number;
