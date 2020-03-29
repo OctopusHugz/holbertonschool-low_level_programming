@@ -8,7 +8,7 @@
  * Return: 0 if success, 98 if error
  **/
 
-int main(int argc, char **argv)
+int main(void)
 {
 	return (0);
 }
