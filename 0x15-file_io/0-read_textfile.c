@@ -36,11 +36,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	buf[letters - 1] = '\0';
+	buf[letters] = '\0';
 	if ((size_t)count != letters)
 		count++;
 
-	if ((size_t)write(STDOUT_FILENO, buf, letters) != letters || write(STDOUT_FILENO, buf, letters) == -1)
+	if (write(STDOUT_FILENO, buf, letters) == -1)
 	{
 		free(buf);
 		return (0);
