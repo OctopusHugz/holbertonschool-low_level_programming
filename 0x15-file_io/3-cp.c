@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define E_98 (exit(98))
 
 /**
  * main - copies the contents of a file to another file
@@ -18,7 +17,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), E_98;
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	fd_two = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fd_two == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
@@ -26,7 +25,7 @@ int main(int argc, char *argv[])
 	{
 		rd = read(fd, buf, 1024);
 		if (rd == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), E_98;
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		if (rd > 0)
 		{
 			wr = write(fd_two, buf, rd);
