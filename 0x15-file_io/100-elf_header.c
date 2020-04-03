@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int fd, rd = 10, wr, class, data;
+	int fd, rd = 10, wr, class, data, os;
 	char buf[1024];
 
 	if (argc != 2)
@@ -37,7 +37,11 @@ int main(int argc, char *argv[])
 		if (data == 1)
 			printf("  Data: %57s", "2's complement, little endian\n");
 		printf("  Version: %25d (current)\n", buf[EI_VERSION]);
-		printf("  OS/ABI: %d\n", buf[EI_OSABI]);
+		os = buf[EI_OSABI];
+		if (os == 0)
+			printf("  OS/ABI: %41s", "UNIX - System V\n");
+
+		printf("  ABI Version: %21d\n", buf[EI_ABIVERSION]);
 		if (rd > 0)
 		{
 			wr = write(fd, buf, rd);
