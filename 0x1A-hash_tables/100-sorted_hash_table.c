@@ -173,7 +173,7 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *current;
-	unsigned long int c_index = 0, index = 0, num_elements = 0;
+	unsigned long int c_index = 0, index = ht->size, num_elements = 0;
 
 	if (ht == NULL)
 		return;
@@ -191,7 +191,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 		}
 		c_index++;
 	}
-	while (index < ht->size)
+	while (index > 0)
 	{
 		if (ht->array[index])
 		{
@@ -205,7 +205,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 				current = current->next;
 			}
 		}
-		index++;
+		index--;
 	}
 	printf("}\n");
 }
