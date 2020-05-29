@@ -91,36 +91,6 @@ shash_node_t *sadd_node(shash_node_t *head, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - retrieves a value associated
- * with the provided key from a sorted hash table
- * @ht: sorted hash table to retrieve value from
- * @key: key to retrieve value of in sorted hash table
- *
- * Return: value associated with key, or NULL if key is not found
- **/
-
-char *shash_table_get(const shash_table_t *ht, const char *key)
-{
-	unsigned long int index;
-	shash_node_t *current;
-
-	if (ht == NULL)
-		return (NULL);
-	index = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[index])
-	{
-		current = ht->array[index];
-		while (current)
-		{
-			if (strcmp(key, current->key) == 0)
-				return (current->value);
-			current = current->next;
-		}
-	}
-	return (NULL);
-}
-
-/**
  * shash_table_print - prints a sorted hash table
  * @ht: sorted hash table to print
  **/
