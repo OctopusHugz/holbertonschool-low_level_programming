@@ -41,7 +41,7 @@ hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
 		{
 			free(current->value);
 			current->value = strdup(value);
-			return (NULL);
+			return (head);
 		}
 		current = current->next;
 	}
@@ -56,7 +56,6 @@ hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
 		head = new_node;
 		return (head);
 	}
-
 	new_node->next = head;
 	head = new_node;
 	return (head);
