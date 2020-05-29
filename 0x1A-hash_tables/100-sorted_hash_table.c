@@ -80,6 +80,8 @@ shash_node_t *sadd_node(shash_node_t *head, const char *key, const char *value)
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 	new_node->next = NULL;
+	new_node->sprev = NULL;
+	new_node->snext = NULL;
 	if (head == NULL)
 	{
 		head = new_node;
