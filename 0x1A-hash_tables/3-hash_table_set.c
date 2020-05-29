@@ -16,6 +16,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (strcmp(key, "") == 0)
 		return (0);
 	ht->array[index] = add_node(ht->array[index], key, value);
+	if (ht->array[index] == NULL)
+		return (0);
 	return (1);
 }
 
