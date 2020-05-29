@@ -27,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @key: key to add to hash table
  * @value: value associated with key to add to hash table
  *
- * Return: address of new node if successful, return NULL if failure
+ * Return: address of head if successful, return NULL if failure
  **/
 
 hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
@@ -41,7 +41,7 @@ hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
 		{
 			free(current->value);
 			current->value = strdup(value);
-			return (head);
+			return (NULL);
 		}
 		current = current->next;
 	}
