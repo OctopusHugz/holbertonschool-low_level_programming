@@ -91,7 +91,8 @@ shash_table_t *shash_table_create(unsigned long int size);
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 
-shash_node_t *sadd_node(shash_node_t *head, const char *key, const char *value);
+shash_node_t *sadd_node(shash_node_t *head,
+						const char *key, const char *value);
 
 char *shash_table_get(const shash_table_t *ht, const char *key);
 
