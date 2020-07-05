@@ -11,6 +11,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
+main.o: main.c m.h
+
+holberton.o: holberton.c m.h
+
 clean:
 	$(RM) *~ $(NAME)
 
@@ -20,5 +24,3 @@ oclean:
 fclean: clean oclean
 
 re: oclean all
-
-include m.h
