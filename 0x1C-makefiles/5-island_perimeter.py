@@ -7,26 +7,23 @@ def island_perimeter(grid):
     land_coords = []
     height = []
     width = []
+    sides = 0
     x = 0
     for rows in grid:
         y = 0
         for nums in rows:
             if nums == 1:
+                sides += 4
                 land_coords.append((x, y))
-            # print(rows[nums], end='')
             y += 1
         x += 1
-        # print()
-    # print(land_coords)
+    #print(land_coords)
+    #print(sides)
     for tups in land_coords:
         height.append(tups[0])
         width.append(tups[1])
-    height_min = min(height) - 1
-    height_max = max(height) + 1
-    true_height = height_max - height_min
-    # print(true_height)
-    width_min = min(width) - 1
-    width_max = max(width)
-    true_width = width_max - width_min
-    # print(true_width)
-    return true_height * true_width
+    height = (max(height) - min(height))
+    width = (max(width) - min(width))
+    shared_sides = height * 2 + width * 2
+    #print(shared_sides)
+    return sides - shared_sides
