@@ -3,10 +3,13 @@ SRC=main.c holberton.c
 OBJ=$(SRC:.c=.o)
 NAME=holberton
 CFLAGS=-Wall -Werror -Wextra -pedantic
+DEPS=$(OBJ:.o=.d)
 
 .PHONY: all $(NAME) clean oclean fclean re
 
 all: $(NAME)
+
+-include $(DEPS)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
@@ -20,5 +23,3 @@ oclean:
 fclean: clean oclean
 
 re: oclean all
-
--include $(SRC:%.c=%.d)
