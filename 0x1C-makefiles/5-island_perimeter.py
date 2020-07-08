@@ -9,21 +9,20 @@ def island_perimeter(grid):
     width = []
     sides = 0
     x = 0
-    for rows in grid:
-        y = 0
-        for nums in rows:
-            if nums == 1:
-                sides += 4
-                land_coords.append((x, y))
-            y += 1
-        x += 1
-    #print(land_coords)
-    #print(sides)
-    for tups in land_coords:
-        height.append(tups[0])
-        width.append(tups[1])
-    height = (max(height) - min(height))
-    width = (max(width) - min(width))
-    shared_sides = height * 2 + width * 2
-    #print(shared_sides)
-    return sides - shared_sides
+    if grid:
+        for rows in grid:
+            y = 0
+            for nums in rows:
+                if nums == 1:
+                    sides += 4
+
+                    land_coords.append((x, y))
+                y += 1
+            x += 1
+        for tups in land_coords:
+            height.append(tups[0])
+            width.append(tups[1])
+        height = (max(height) - min(height))
+        width = (max(width) - min(width))
+        shared_sides = height * 2 + width * 2
+        return sides - shared_sides
