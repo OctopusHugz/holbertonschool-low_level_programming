@@ -32,12 +32,12 @@ int binary_search(int *array, size_t size, int value)
 			sp++;
 		}
 		mid = (start + end) / 2;
-		if (array[mid] == value)
-			return (mid);
+		if (value < array[mid])
+			end = mid - 1;
 		else if (value > array[mid])
 			start = mid + 1;
 		else
-			end = mid - 1;
+			return (mid);
 	}
 	return (-1);
 }
