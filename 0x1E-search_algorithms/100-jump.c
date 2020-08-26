@@ -13,8 +13,7 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-	/* end = size - 1 */
-	unsigned int start = 0, end, jump = (unsigned int)sqrt(size);
+	unsigned int start = 0, end = size - 1, jump = (unsigned int)sqrt(size);
 
 	if (!array)
 		return (-1);
@@ -29,13 +28,13 @@ int jump_search(int *array, size_t size, int value)
 			break;
 		}
 	}
-	for (; start <= end && start < size; start++)
+	if (end > size - 1)
+		end = size - 1;
+	for (; start <= end; start++)
 	{
 		printf("Value checked array[%d] = [%d]\n", start, array[start]);
 		if (array[start] == value)
 			return ((int)start);
-		/* else if (array[start] > value)
-			return (-1); */
 	}
 	return (-1);
 }
