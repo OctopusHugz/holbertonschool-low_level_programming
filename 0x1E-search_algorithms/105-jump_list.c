@@ -14,11 +14,12 @@
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	listint_t *node;
-	size_t jump = sqrt(size), prev_index = list->index,
-		   next_index = prev_index + jump;
+	size_t jump = sqrt(size), prev_index, next_index;
 
 	if (!list)
 		return (NULL);
+	prev_index = list->index;
+	next_index = prev_index + jump;
 	while (/* next_index < size */ list)
 	{
 		node = list;
