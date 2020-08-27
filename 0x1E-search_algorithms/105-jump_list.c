@@ -13,8 +13,36 @@
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	(void)size, (void)value;
+	listint_t *node;
+	size_t jump = sqrt(size), prev_index = list->index,
+		   next_index = prev_index + jump;
+
 	if (!list)
 		return (NULL);
+	while (/* next_index < size */ list)
+	{
+		node = list;
+		while (node->index < next_index)
+			node = node->next;
+		printf("Value checked array[%d] = [%d]\n", (int)next_index, node->n);
+		if (node->n > value)
+		{
+			printf("Value found between indexes [%d] and [%d]\n",
+				   (int)prev_index, (int)next_index);
+			/* Start linear search from prev_index to next_index */
+			while (list->index < next_index)
+			{
+				printf("Value checked array[%d] = [%d]\n", (int)list->index,
+					   list->n);
+				if (value == list->n)
+					return (list);
+				list = list->next;
+			}
+		}
+		while (list->index < next_index)
+			list = list->next;
+		prev_index = list->index;
+		next_index = prev_index + jump;
+	}
 	return (NULL);
 }
