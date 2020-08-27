@@ -23,9 +23,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	temp = list;
 	while (temp && temp->next)
 	{
-		node = temp;
-		while (node->index < next_index && node->next)
-			node = node->next;
+		node = get_nodeint_at_index(list, next_index);
 		printf("Value checked array[%d] = [%d]\n", (int)next_index, node->n);
 		if (node->n >= value || next_index == size - 1)
 		{
@@ -37,18 +35,41 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 					   temp->n);
 				if (value == temp->n)
 					return (temp);
-				if (temp->next)
+				else if (temp->next)
 					temp = temp->next;
 				else
 					break;
 			}
 		}
-		while (temp->index < next_index && temp->next)
-			temp = temp->next;
+		temp = get_nodeint_at_index(list, next_index);
 		prev_index = temp->index;
 		next_index = prev_index + jump;
 		if (next_index == size)
 			next_index--;
+	}
+	return (NULL);
+}
+
+/**
+ * get_nodeint_at_index - returns the nth node of a listint_t linked list
+ * @head: pointer to the head of the linked list
+ * @index: index of the linked list to return the node from
+ *
+ * Return: nth node of a listint_t linked list
+ * or NULL if the node doesn't exist
+ **/
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	listint_t *current_node = head;
+	unsigned int i = 0;
+
+	while (current_node)
+	{
+		if (i == index)
+			return (current_node);
+		i++;
+		current_node = current_node->next;
 	}
 	return (NULL);
 }
