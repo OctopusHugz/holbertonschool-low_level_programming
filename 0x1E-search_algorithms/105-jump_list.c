@@ -13,16 +13,17 @@
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *node;
+	listint_t *node, *temp;
 	size_t jump = sqrt(size), prev_index, next_index;
 
 	if (!list)
 		return (NULL);
 	prev_index = list->index;
 	next_index = prev_index + jump;
-	while (list && list->next)
+	temp = list;
+	while (temp && temp->next)
 	{
-		node = list;
+		node = temp;
 		while (node->index < next_index && node->next)
 			node = node->next;
 		printf("Value checked array[%d] = [%d]\n", (int)next_index, node->n);
@@ -30,21 +31,21 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		{
 			printf("Value found between indexes [%d] and [%d]\n",
 				   (int)prev_index, (int)next_index);
-			while (list->index <= next_index)
+			while (temp->index <= next_index)
 			{
-				printf("Value checked array[%d] = [%d]\n", (int)list->index,
-					   list->n);
-				if (value == list->n)
-					return (list);
-				if (list->next)
-					list = list->next;
+				printf("Value checked array[%d] = [%d]\n", (int)temp->index,
+					   temp->n);
+				if (value == temp->n)
+					return (temp);
+				if (temp->next)
+					temp = temp->next;
 				else
 					break;
 			}
 		}
-		while (list->index < next_index && list->next)
-			list = list->next;
-		prev_index = list->index;
+		while (temp->index < next_index && temp->next)
+			temp = temp->next;
+		prev_index = temp->index;
 		next_index = prev_index + jump;
 		if (next_index == size)
 			next_index--;
