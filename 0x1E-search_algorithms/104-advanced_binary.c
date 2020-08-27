@@ -37,7 +37,7 @@ int binary_search_recursion(int *array, size_t low, size_t high, int value)
 	int mid = (low + high) / 2;
 	size_t count = low;
 
-	if (low > high)
+	if (!array || low > high)
 		return (-1);
 	printf("Searching in array: ");
 	while (count <= high)
@@ -45,9 +45,10 @@ int binary_search_recursion(int *array, size_t low, size_t high, int value)
 		printf("%d", array[count]);
 		if (count != high)
 			printf(", ");
+		else
+			printf("\n");
 		count++;
 	}
-	printf("\n");
 	if (value < array[mid])
 		return (binary_search_recursion(array, low, mid - 1, value));
 	else if (value > array[mid])
