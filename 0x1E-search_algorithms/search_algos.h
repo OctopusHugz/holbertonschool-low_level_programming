@@ -63,4 +63,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 
 skiplist_t *get_nodeint_at_index2(skiplist_t *head, unsigned int index);
 
+size_t list_len(const skiplist_t *h);
+
 #endif /* SEARCH_ALGOS_H */
