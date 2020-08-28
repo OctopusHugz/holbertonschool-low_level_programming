@@ -49,7 +49,7 @@ int binary_search_recursion(int *array, size_t low, size_t high, int value)
 			printf("\n");
 		count++;
 	}
-	if (value == array[mid] && array[mid - 1] != value)
+	if (value == array[mid] && (mid == 0 || array[mid - 1] != value))
 		return (mid);
 	else if (value < array[mid])
 		return (binary_search_recursion(array, low, mid - 1, value));
