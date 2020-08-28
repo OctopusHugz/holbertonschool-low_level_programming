@@ -44,8 +44,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		temp = get_nodeint_at_index(list, next_index);
 		prev_index = temp->index;
 		next_index = prev_index + jump;
-		if (next_index == size)
-			next_index--;
+		if (next_index >= size)
+			next_index = size - 1;
 	}
 	return (NULL);
 }
