@@ -61,10 +61,6 @@ int binary_search_recursion(int *array, size_t low, size_t high, int value);
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 
-listint_t *create_list(int *array, size_t size);
-
-void free_list(listint_t *list);
-
-void print_list(const listint_t *list);
+skiplist_t *get_nodeint_at_index2(skiplist_t *head, unsigned int index);
 
 #endif /* SEARCH_ALGOS_H */

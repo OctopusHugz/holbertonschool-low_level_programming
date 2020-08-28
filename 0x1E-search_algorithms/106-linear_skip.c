@@ -12,6 +12,58 @@
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
+	skiplist_t *node, *temp;
+	size_t pi;
+
 	if (!list)
 		return (NULL);
+	node = list;
+	if (node->express)
+		node = node->express;
+	while (node->express)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", node->index, node->n);
+		if (node->n >= value)
+		{
+			printf("Value found between indexes [%lu] and [%lu]\n",
+				   pi, node->index);
+			while (temp->index <= node->index)
+			{
+				printf("Value checked at index [%lu] = [%d]\n",
+					   pi, temp->n);
+				if (temp->n == value)
+					return (temp);
+				temp = temp->next;
+				pi++;
+			}
+		}
+		pi = node->index;
+		temp = get_nodeint_at_index2(list, pi);
+		node = node->express;
+	}
+	return (NULL);
+}
+
+/**
+ * get_nodeint_at_index - returns the nth node of a listint_t linked list
+ * @head: pointer to the head of the linked list
+ * @index: index of the linked list to return the node from
+ *
+ * Return: nth node of a listint_t linked list
+ * or NULL if the node doesn't exist
+ **/
+
+skiplist_t *get_nodeint_at_index2(skiplist_t *head, unsigned int index)
+{
+	skiplist_t *current_node = head;
+	unsigned int i = 0;
+
+	while (current_node)
+	{
+		if (i == index)
+			return (current_node);
+		i++;
+		current_node = current_node->next;
+	}
+	return (NULL);
 }
