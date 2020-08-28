@@ -21,7 +21,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	prev_index = list->index;
 	next_index = prev_index + jump;
 	temp = list;
-	while (temp && temp->next)
+	while (/* temp &&  */temp->next)
 	{
 		node = get_nodeint_at_index(list, next_index);
 		printf("Value checked array[%d] = [%d]\n", (int)next_index, node->n);
